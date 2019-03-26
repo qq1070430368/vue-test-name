@@ -4,3 +4,25 @@
   top: @top-fixed;
   width: 100%;
 };
+.cmp-title {
+  background: aqua;
+  h6 {
+    padding: 10px;
+  }
+}
+
+// 弹性公用布局
+@row-flex: row;
+@col-flex: column;
+// 横向布局
+.flex-col{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: @row-flex
+}
+// 垂直剧中布局
+.flex-center{
+  &:extend(.flex-col);
+  justify-content: center;
+  align-items: center;
+}

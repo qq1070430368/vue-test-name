@@ -37,7 +37,8 @@ export default {
       show: true,
       datalist: [],
       seleteds: '',
-      focusState: false
+      focusState: false,
+      nextTicks: '123'
     };
   },
   props: {
@@ -87,14 +88,16 @@ export default {
 
 <style lang="less" scoped>
 .vue-dropdown.default-theme {
-  position: absolute;
+  // position: absolute;
+
   left: 15%;
   width: 70%;
-  margin: 0 auto;
+  // margin: 0 auto;
   margin-top: 1em;
   padding: 1em;
   z-index: 10;
   box-shadow: 0px 0px 10px #ccc;
+  margin: 50px auto;
   &._self-show {
     display: block !important;
   }

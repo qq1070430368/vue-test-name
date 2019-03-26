@@ -1,65 +1,60 @@
 <template>
   <div class="show_17_homePage top-fixed">
-    <div class="">
+    <div class>
       <div class="home-page-grid">
-
         <div class="show_17_homepage_swiper">
           <mt-swipe :auto="4000">
-            <mt-swipe-item
-              v-for="item in homePageImgList"
-              :key="item.id"
-            >
-              <img
-                class="img-responsive"
-                :src="item.imgUrl"
-                v-if="item.imgUrl"
-                alt=""
-              >
+            <mt-swipe-item v-for="item in homePageImgList" :key="item.id">
+              <img class="img-responsive" :src="item.imgUrl" v-if="item.imgUrl" alt>
             </mt-swipe-item>
-
           </mt-swipe>
         </div>
 
         <div class="show_17_grid_list">
           <div class="show_17_grid_con">
             <div class="show_17_grid_wrap">
-
               <router-link :to="{name: 'seletedOptions', path: '/seletedOptions'}">
                 <div class="grid_flex">
-                  <i class='iconfont iconziyuan'></i>
+                  <i class="iconfont iconziyuan"></i>
                   <span>下拉组件</span>
                 </div>
               </router-link>
               <router-link :to="{name: 'routerRsb', path: '/routerRsb'}">
                 <div class="grid_flex">
-                  <i class='iconfont iconziyuan'></i>
+                  <i class="iconfont iconziyuan"></i>
                   <span>响应式路由</span>
                 </div>
               </router-link>
-             <router-link :to="{name: 'flexTest', path: '/flexIndex'}">
+              <router-link :to="{name: 'flexTest', path: '/flexIndex'}">
                 <div class="grid_flex">
-                  <i class='iconfont iconziyuan'></i>
+                  <i class="iconfont iconziyuan"></i>
                   <span>弹性布局</span>
                 </div>
               </router-link>
+              <router-link :to="{name: 'slot', path: '/slot'}">
+                <div class="grid_flex">
+                  <i class="iconfont iconziyuan"></i>
+                  <span>slot插槽</span>
+                </div>
+              </router-link>
+              <router-link :to="{name: 'tabs', path: '/tabs'}">
+                <div class="grid_flex">
+                  <i class="iconfont iconziyuan"></i>
+                  <span>TAb切换IS</span>
+                </div>
+              </router-link>
+              <router-link :to="{name: 'keepAlive', path: '/keepAlive'}">
+                <div class="grid_flex">
+                  <i class="iconfont iconziyuan"></i>
+                  <span>kee-alive</span>
+                </div>
+              </router-link>
               <div class="grid_flex">
-                <i class='iconfont iconziyuan'></i>
+                <i class="iconfont iconziyuan"></i>
                 <span>我的经历</span>
               </div>
               <div class="grid_flex">
-                <i class='iconfont iconziyuan'></i>
-                <span>我的经历</span>
-              </div>
-              <div class="grid_flex">
-                <i class='iconfont iconziyuan'></i>
-                <span>我的经历</span>
-              </div>
-              <div class="grid_flex">
-                <i class='iconfont iconziyuan'></i>
-                <span>我的经历</span>
-              </div>
-              <div class="grid_flex">
-                <i class='iconfont iconziyuan'></i>
+                <i class="iconfont iconziyuan"></i>
                 <span>我的经历</span>
               </div>
             </div>
@@ -74,8 +69,7 @@
               <span>{{item.name}}</span>
             </router-link>
           </li>
-        </ul> -->
-
+        </ul>-->
       </div>
     </div>
   </div>
@@ -98,7 +92,7 @@ export default {
     this.getImgList();
   },
   watch: {
-    selected: function(val, oldVal) {
+    selected: function(val) {
       // 这里就可以通过 val 的值变更来确定去向
       switch (val) {
         case "MainPage":
@@ -120,7 +114,7 @@ export default {
   methods: {
     getImgList() {
       this.$http
-        .post("http://localhost:3000/usersImg", {
+        .post("http://127.0.0.1:3000/usersImg", {
           loginType: "img"
         })
         .then(response => {
@@ -158,6 +152,10 @@ export default {
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
+        flex-direction: column;
+        &:hover {
+          cursor: pointer;
+        }
         i {
           font-size: 45px;
           color: red;

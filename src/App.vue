@@ -74,9 +74,6 @@ export default {
       // appTitle: '主页'
       selected: ""
     };
-  },
-  beforeMount() {
-    this.appTitle = "主业";
   }
 };
 </script>

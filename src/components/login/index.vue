@@ -101,7 +101,7 @@ export default {
     login: function() {
 
       this.$http
-        .post("http://localhost:3000/users", {
+        .post("http://127.0.0.1:3000/users", {
           users: this.users,
           password: this.password
         })
