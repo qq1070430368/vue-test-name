@@ -49,10 +49,12 @@
                   <span>kee-alive</span>
                 </div>
               </router-link>
-              <div class="grid_flex">
-                <i class="iconfont iconziyuan"></i>
-                <span>我的经历</span>
-              </div>
+               <router-link :to="{name: 'vuex', path: '/vuex'}">
+                <div class="grid_flex">
+                  <i class="iconfont iconziyuan"></i>
+                  <span>vuex</span>
+                </div>
+              </router-link>
               <div class="grid_flex">
                 <i class="iconfont iconziyuan"></i>
                 <span>我的经历</span>

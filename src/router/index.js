@@ -10,6 +10,7 @@ import flex from '@/components/shoxCmp/shox-flex/index';
 import slot from '@/components/shoxCmp/shox-slot/index';
 import tabs from '@/components/shoxCmp/shox-tab/index';
 import keepAlive from '@/components/shoxCmp/shox-keepAlive/index';
+import vuex from '@/components/shoxCmp/shox-vuex/index';
 Vue.use(Router);
 
 const router = new Router({
@@ -118,6 +119,16 @@ const router = new Router({
       header: true,
       footer: false,
       name: '动态组件解析'
+    }
+  },
+  {
+    path: '/vuex',
+    name: 'vuex',
+    component: (resolve) => resolve(vuex),
+    meta: {
+      header: true,
+      footer: false,
+      name: 'vuex解析'
     }
   }
   ]
