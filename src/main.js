@@ -5,6 +5,8 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router';
+import store from './store';
+
 import $ from 'jquery';
 import '../static/css/css.reset.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -15,17 +17,17 @@ import './style/config.less';
 import 'mint-ui/lib/style.css';
 
 import axios from 'axios';
+import {currency} from './untils/filter';
 Vue.config.productionTip = false;
 Vue.use(MintUI);
 Vue.prototype.$http = axios;
-// 定义全局共用titile
-Vue.prototype.appTitle = '啊速度撒旦';
-// Vue.use($);
+Vue.filter('currency', currency);
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 });
