@@ -1,5 +1,4 @@
 import shop from '../../api/shop';
-console.log(shop)
 // initial state
 const state = {
   all: []
@@ -11,7 +10,6 @@ const getters = {};
 // actions
 const actions = {
   getAllProducts({ commit }) {
-    console.log(commit, 'commit')
     shop.getProducts(products => {
       commit('setProducts', products);
     });

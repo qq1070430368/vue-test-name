@@ -48,7 +48,9 @@ const actions = {
   },
 
   addProductToCarts({ state, commit }, product) {
-    console.log(product, '应改是传过来的第一个参数 结构')
+    console.log(product, '应改是传过来的第三个参数 结构')
+    console.log(state, '应改是传过来的第一个参数 结构')
+    console.log(commit, '应改是传过来的第二个参数 结构')
     commit('setCheckoutStatus', null);
     if (product.inventory > 0) {
       const cartItem = state.items.find(item => item.id === product.id);
@@ -73,7 +75,8 @@ const mutations = {
     });
   },
 
-  incrementItemQuantity(state, { id }) {
+  incrementItemQuantity(state, { id, quantity }) {
+    debugger
     const cartItem = state.items.find(item => item.id === id);
     cartItem.quantity++;
   },

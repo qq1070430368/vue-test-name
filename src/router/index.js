@@ -1,16 +1,6 @@
 /* eslint-disable fun-call-spacing */
 import Vue from 'vue';
 import Router from 'vue-router';
-import Login from '@/components/Login/index';
-import homePage from '@/components/homePage/index';
-import seleted from '@/components/shoxCmp/shox-seleted/index';
-import routerRsb from '@/components/shoxCmp/shox-routerRsb/index';
-import routerRsbInfo from '@/components/shoxCmp/shox-routerRsb/shox-routerInfo/index';
-import flex from '@/components/shoxCmp/shox-flex/index';
-import slot from '@/components/shoxCmp/shox-slot/index';
-import tabs from '@/components/shoxCmp/shox-tab/index';
-import keepAlive from '@/components/shoxCmp/shox-keepAlive/index';
-import vuex from '@/components/shoxCmp/shox-vuex/index';
 Vue.use(Router);
 
 const router = new Router({
@@ -19,7 +9,7 @@ const router = new Router({
     path: '/',
     name: '登录',
     title: 'login',
-    component: Login,
+    component: resolve => require(['@/components/Login/index'], resolve),
     meta: {
       header: false,
       footer: false,
@@ -30,7 +20,7 @@ const router = new Router({
     path: '/home',
     name: '主页',
     title: 'home',
-    component: homePage,
+    component: resolve => require(['@/components/homePage/index'], resolve),
     meta: {
       header: true,
       footer: true,
@@ -42,7 +32,7 @@ const router = new Router({
     name: 'seletedOptions',
     title: 'seletedOptions',
     // require['````', reslove]
-    component: (resolve) => resolve(seleted),
+    component: resolve => require(['@/components/shoxCmp/shox-seleted/index'], resolve),
     meta: {
       header: true,
       footer: false,
@@ -52,29 +42,17 @@ const router = new Router({
   {
     path: '/routerRsb',
     name: 'routerRsb',
-    component: routerRsb,
+    component: resolve => require(['@/components/shoxCmp/shox-routerRsb/index'], resolve),
     meta: {
       header: true,
       footer: false,
       name: '响应式路由'
     }
-    // children: [
-    //   {
-    //     name: 'routerRsbInfo',
-    //     path: 'profile',
-    //     component: homePage,
-    //     meta: {
-    //       header: true,
-    //       footer: false,
-    //       name: '这啥玩意'
-    //     }
-    //   }
-    // ]
   },
   {
-    path: '/foo/:id',
+    path: '/routerRsb/:id',
     name: 'routerRsbInfo',
-    component: (resolve) => resolve(routerRsbInfo),
+    component: resolve => require(['@/components/shoxCmp/shox-routerRsb/shox-routerInfo/index'], resolve),
     meta: {
       header: true,
       footer: false,
@@ -84,7 +62,7 @@ const router = new Router({
   {
     path: '/flexIndex',
     name: 'flexTest',
-    component: (resolve) => resolve(flex),
+    component: (resolve) => require(['@/components/shoxCmp/shox-flex/index'], resolve),
     meta: {
       header: true,
       footer: false,
@@ -94,7 +72,7 @@ const router = new Router({
   {
     path: '/slot',
     name: 'slot',
-    component: (resolve) => resolve(slot),
+    component: (resolve) => require(['@/components/shoxCmp/shox-slot/index'], resolve),
     meta: {
       header: true,
       footer: false,
@@ -104,7 +82,7 @@ const router = new Router({
   {
     path: '/tabs',
     name: 'tabs',
-    component: (resolve) => resolve(tabs),
+    component: (resolve) => require(['@/components/shoxCmp/shox-tab/index'], resolve),
     meta: {
       header: true,
       footer: false,
@@ -114,7 +92,7 @@ const router = new Router({
   {
     path: '/keepAlive',
     name: 'keepAlive',
-    component: (resolve) => resolve(keepAlive),
+    component: (resolve) => require(['@/components/shoxCmp/shox-keepAlive/index'], resolve),
     meta: {
       header: true,
       footer: false,
@@ -124,11 +102,31 @@ const router = new Router({
   {
     path: '/vuex',
     name: 'vuex',
-    component: (resolve) => resolve(vuex),
+    component: (resolve) => require(['@/components/shoxCmp/shox-vuex/index'], resolve),
     meta: {
       header: true,
       footer: false,
       name: 'vuex解析'
+    }
+  },
+  {
+    path: '/goShopping',
+    name: 'goShopping',
+    component: (resolve) => require(['@/components/shoxCmp/shox-shops/index'], resolve),
+    meta: {
+      header: true,
+      footer: false,
+      name: '我的待办事项'
+    }
+  },
+  {
+    path: '/goShopping/cart',
+    name: 'cart',
+    component: (resolve) => require(['@/components/shoxCmp/shox-shops/cart'], resolve),
+    meta: {
+      header: true,
+      footer: false,
+      name: '待办'
     }
   }
   ]

@@ -27,7 +27,7 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     "comma-dangle": ["error", "never"], //是否允许对象中出现结尾逗号
     "no-cond-assign": 2, //条件语句的条件中不允许出现赋值运算符
-    "no-console": 2, //不允许出现console语句
+    // "no-console": 2, //不允许出现console语句
     "no-constant-condition": 2, //条件语句的条件中不允许出现恒定不变的量
     "no-control-regex": 2, //正则表达式中不允许出现控制字符
     "no-debugger": 2, //不允许出现debugger语句
@@ -137,7 +137,7 @@ module.exports = {
     "no-multiple-empty-lines": [2, {"max": 2}], //空行最多不能超过两行
     "no-nested-ternary": 2, //不允许使用嵌套的三目运算符
     "no-new-object": 2, //禁止使用new Object()
-    "fun-call-spacing": 2, //函数调用时，函数名与()之间不能有空格
+    // "fun-call-spacing": 2, //函数调用时，函数名与()之间不能有空格
     "no-ternary": 0, //不允许使用三目运算符
     "no-trailing-spaces": 2, //一行最后不允许有空格
     "no-underscore-dangle": 2, //不允许标识符以下划线开头
