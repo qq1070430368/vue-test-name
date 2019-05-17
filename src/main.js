@@ -19,7 +19,7 @@ import 'mint-ui/lib/style.css';
 import axios from 'axios';
 import {currency} from './untils/filter';
 Vue.config.productionTip = false;
-Vue.use(MintUI);
+Vue.use(MintUI); 
 Vue.prototype.$http = axios;
 Vue.filter('currency', currency);
 
