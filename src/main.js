@@ -31,3 +31,4 @@ new Vue({
   components: { App },
   template: '<App/>'
 });
+// 那个这是我玩的
